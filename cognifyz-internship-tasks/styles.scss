@@ -1,0 +1,40 @@
+
+// Variables
+$primary-color: #ff6f61;
+$background-color: #fff3e0;
+$font-color: #333;
+$font-family: 'Segoe UI', sans-serif;
+
+// Nesting and styling
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $font-color;
+  padding: 40px;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+

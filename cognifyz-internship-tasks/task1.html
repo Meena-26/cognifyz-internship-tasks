@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Cognifyz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	    text-align: center;
+        }
+        img.logo {
+            width: 150px;
+            margin: 20px auto;
+	    display: block;
+        }
+        h1 {
+            text-align: center;
+            color: Blue;
+        }
+	h2 {
+	    text-align: center;
+            color: Skyblue;
+
+        p {
+            font-size: 18px;
+            color: #444;
+	    
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Cognifyz</h1>
+    <h2>Where Data Meets <span id="typed-word"></span><span id="cursor">|</span></h2>
+
+
+
+    <p>
+          Cognifyz Technologies is a leading technology company specializing in artificial intelligence, machine learning, and data analytics. We provide cutting-edge solutions that empower businesses to make data-driven decisions.
+
+    </p>
+
+    <img src="logo.png" alt="Cognifyz Logo">
+
+    <p>
+          Stay tuned for more updates and features as this site continues to evolve.
+
+    </p>
+    <script>
+    const words = ["Intelligence.", "Innovation.", "Technology.", "Excellence.", "Solutions."];
+    let i = 0;
+    let j = 0;
+    let currentWord = '';
+    let isDeleting = false;
+    const speed = 150; // typing speed
+    const wordElement = document.getElementById("typed-word");
+
+    function typeEffect() {
+        currentWord = words[i];
+        if (!isDeleting) {
+            wordElement.textContent = currentWord.substring(0, j + 1);
+            j++;
+            if (j === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1000); // pause before deleting
+                return;
+            }
+        } else {
+            wordElement.textContent = currentWord.substring(0, j - 1);
+            j--;
+            if (j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+            }
+        }
+        setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+</script>
+
+</body>
+</html>
